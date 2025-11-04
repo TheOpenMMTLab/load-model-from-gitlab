@@ -1,4 +1,5 @@
 
+Info: Create Token with Scope: api and Role: Developer
 
 export GITLAB_URL=<url>
 export GITLAB_TOKEN=<token>

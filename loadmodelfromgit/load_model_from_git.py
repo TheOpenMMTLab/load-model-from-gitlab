@@ -21,9 +21,12 @@ def load_model_from_git(branch_name: str, input_path: str, output_path: str):
     print(f'Project Name: {p.name}')
 
     f = p.files.get(file_path=input_path, ref=branch_name)
-    print(f"File Name: {f.file_name}")
+    print(f"File found in Repository: {f.file_name}")
 
     # Write to file
     with open(output_path, "wb") as file:
         file.write(f.decode())
-        print("File written successfully.")
+        print(f"File {output_path} written successfully.")
+
+    if os.path.exists(output_path):
+        print(f"File exists at {output_path}")
